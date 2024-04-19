@@ -6,7 +6,7 @@ This project hosts a Streamlit web application designed to classify objects in i
 
 ## Features
 
-- Dark and light theme toggling for the application interface.
+- Dark and light theme toggling for the application interface (preliminary version).
 - Image classification using a pretrained Pytorch model.
 - Visualization of the prediction results through integrated an Plotly graph.
 
@@ -22,35 +22,29 @@ To get this application up and running, follow these steps:
 
 To clone the repository and navigate into the project directory, run:
 
-    ```bash
     git clone https://github.com/PlanktoScope/streamlit-classification-app.git
     cd streamlit-classification-app
-    ```
+    
 
 ### Building the Docker Image
 
 Build the Docker image using the following command (it takes a considerable time):
 
-    ```bash
     docker build -t <image_name>:<tag> .
-    ```
 
 ### Running the Docker Container
 
 Run the Docker container with:
 
-    ```bash
     docker run -p 8501:8501 <image_name>:<tag>
-    ```
 
 The Streamlit app will be served on port 8501.
 
 ### Accessing the application
 
 Once the application is running, click on the link displayed in your terminal or open your web browser and navigate to:
-    ```bash
+
     http://localhost:8501
-    ```
 
 From there, you can use the web interface to:
 
