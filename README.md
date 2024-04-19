@@ -25,6 +25,12 @@ To clone the repository and navigate into the project directory, run:
     git clone https://github.com/PlanktoScope/streamlit-classification-app.git
     cd streamlit-classification-app
     
+### Creating a folder for pretrained models
+
+To avoid errors later in running the docker container, please import your pretrained models (be sure to include the input image size in its name like sizexsize) and create a folder as follows:
+
+    models/<model_name>
+
 
 ### Building the Docker Image
 
