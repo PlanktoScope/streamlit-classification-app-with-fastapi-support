@@ -10,6 +10,8 @@ This project hosts a Streamlit web application designed to classify objects in i
 - Image classification using a pretrained Pytorch model.
 - Visualization of the prediction results through integrated an Plotly graph.
 
+![Distribution of detected microorganisms](plotly_graph.png "Distribution of detected microorganisms")
+
 ## Prerequisites
 
 Before running this application, make sure you have Docker installed on your system. If you do not have Docker, you can download it from the [official Docker website](https://docs.docker.com/get-docker/).
