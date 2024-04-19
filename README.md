@@ -10,7 +10,7 @@ This project hosts a Streamlit web application designed to classify objects in i
 - Image classification using a pretrained Pytorch model.
 - Visualization of the prediction results through integrated an Plotly graph.
 
-![Distribution of detected microorganisms](plotly_graph.png "Distribution of detected microorganisms")
+<img src="plotly_graph.png" alt="Distribution of detected microorganisms" title="Distribution of detected microorganisms" width="800" height="800"/>
 
 ## Prerequisites
 
