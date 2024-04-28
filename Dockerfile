@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install the required dependencies
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r requirements.txt --extra-index-url https://www.piwheels.org/simple
 
 # Make port 8501 available to anyone outside this container
 EXPOSE 8501
