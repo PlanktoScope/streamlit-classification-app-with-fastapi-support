@@ -1,5 +1,7 @@
 # Use an official Python runtime as the base image
-FROM python:3.12
+# We use Python 3.11 because an opencv-python wheel is available on piwheels (for armv7) on Python
+# 3.11 for Bookworm, but not for Python 3.12.
+FROM docker.io/library/python:3.11.9-slim-bookworm
 
 # Set the working directory in the container
 WORKDIR /app
