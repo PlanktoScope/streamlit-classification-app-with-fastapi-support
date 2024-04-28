@@ -1,5 +1,5 @@
 # Use an official Python runtime as the base image
-# We use Python 3.9 because torch requires python<3.11
+# We use the same base image as what the PlanktoScope segmenter's container image uses:
 FROM docker.io/library/python:3.9.18-slim-bullseye
 
 # Set the working directory in the container
