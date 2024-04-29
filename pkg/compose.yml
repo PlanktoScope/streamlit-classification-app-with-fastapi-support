@@ -1,6 +1,6 @@
 services:
   server:
-    image: ghcr.io/planktoscope/streamlit-classification-app:sha-bdb98e5
+    image: ghcr.io/planktoscope/streamlit-classification-app:sha-0703263
 
 networks:
   default:
