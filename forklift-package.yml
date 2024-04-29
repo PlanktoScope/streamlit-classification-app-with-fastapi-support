@@ -1,0 +1,33 @@
+package:
+  description: Demo app with a pre-trained demo model for classifying segmented objects
+  maintainers:
+    # Note: this is the maintainer of the Forklift package, not the maintainer of the app itself
+    - name: Ethan Li
+      email: lietk12@gmail.com
+  license: Apache-2.0
+  sources:
+    - https://github.com/PlanktoScope/streamlit-classification-app
+
+deployment:
+  compose-files: [compose.yml]
+
+features:
+  frontend:
+    description: Provides access to a browser landing page
+    compose-files: [compose-frontend.yml]
+    requires:
+      networks:
+        - description: Overlay network for Caddy to connect to upstream services
+          name: caddy-ingress
+      services:
+        - tags: [caddy-docker-proxy]
+          port: 80
+          protocol: http
+    provides:
+      services:
+        - description: PlanktoScope documentation site
+          port: 80
+          protocol: http
+          paths:
+            - /ps/streamlit-demo
+            - /ps/streamlit-demo/*

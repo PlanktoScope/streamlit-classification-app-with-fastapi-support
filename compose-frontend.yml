@@ -1,0 +1,13 @@
+services:
+  server:
+    networks:
+      - caddy-ingress
+    labels:
+      caddy: :80
+      caddy.redir: /ps/streamlit-demo /ps/streamlit-demo/
+      caddy.handle_path: /ps/streamlit-demo/*
+      caddy.handle_path.reverse_proxy: "{{upstreams 80}}"
+
+networks:
+  caddy-ingress:
+    external: true
