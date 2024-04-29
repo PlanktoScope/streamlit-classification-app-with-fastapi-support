@@ -9,6 +9,8 @@ services:
       caddy.handle_path.reverse_proxy: "{{upstreams 8501}}"
     environment:
       STREAMLIT_SERVER_BASE_URL_PATH: /ps/streamlit-demo
+    healthcheck:
+      test: curl --fail http://localhost:8501/ps/streamlit-demo/_stcore/health || exit 1
 
 networks:
   caddy-ingress:

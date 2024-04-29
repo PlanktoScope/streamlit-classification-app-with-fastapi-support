@@ -30,4 +30,4 @@ EXPOSE 8501
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
 
 # Run the Streamlit app
-ENTRYPOINT ["streamlit", "run", "app_model.py", "--server.port=8501", "--server.address=::", "--server.headless=true"]
+ENTRYPOINT ["streamlit", "run", "app_model.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]
