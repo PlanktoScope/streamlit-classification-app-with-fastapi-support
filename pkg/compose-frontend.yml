@@ -5,8 +5,8 @@ services:
     labels:
       caddy: :80
       caddy.redir: /ps/streamlit-demo /ps/streamlit-demo/
-      caddy.handle_path: /ps/streamlit-demo/*
-      caddy.handle_path.reverse_proxy: "{{upstreams 8501}}"
+      caddy.handle: /ps/streamlit-demo/*
+      caddy.handle.reverse_proxy: "{{upstreams 8501}}"
     environment:
       STREAMLIT_SERVER_BASE_URL_PATH: /ps/streamlit-demo
     healthcheck:
