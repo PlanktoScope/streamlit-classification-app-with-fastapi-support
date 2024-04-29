@@ -9,7 +9,7 @@ WORKDIR /app
 COPY . .
 
 # Install the required dependencies
-RUN pip3 install -r requirements.txt --extra-index-url https://www.piwheels.org/simple
+RUN pip3 install -r requirements.txt --index-url https://download.pytorch.org/whl/cpu --extra-index-url https://pypi.org/simple
 
 # Make port 8501 available to anyone outside this container
 EXPOSE 8501
