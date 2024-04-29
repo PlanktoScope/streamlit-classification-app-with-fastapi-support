@@ -1,0 +1,6 @@
+forklift-version: v0.7.0
+
+repository:
+  path: github.com/PlanktoScope/streamlit-classification-app
+  description: Forklift package for the PlanktoScope OS
+  readme-file: README.md
