@@ -9,7 +9,7 @@ RUN \
   apt-get -y install --no-install-recommends curl && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/* && \
-  rm /tmp/apt-packages
+  rm -f /tmp/apt-packages
 
 # Set the working directory in the container
 WORKDIR /app
