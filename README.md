@@ -18,9 +18,7 @@ Features:
 
 Before running this application, make sure you have Docker installed on your system. If you do not have Docker, you can download it from the [official Docker website](https://docs.docker.com/get-docker/).
 
-### Installation for local development
-
-To get this application up and running, follow these steps:
+### Local Docker image build for local testing
 
 #### Cloning the Repository
 
@@ -76,13 +74,6 @@ your computer. Setup instructions are available
 that currently `forklift` is only tested for Linux computers, and that Forklift is still an
 experimental prototype.
 
-#### Deployment
-
-The instructions below assume that you are using a version of the `forklift` tool which is greater
-than or equal to v0.7.0 (but less than v0.8.0, which has not been released yet); other versions of
-the `forklift` tool may behave differently and thus may require different commands than what is
-described below:
-
 #### First-time deployment
 
 You can clone, stage, and apply the latest commit of this Forklift pallet to your computer, by
@@ -127,16 +118,8 @@ forklift stage apply
 
 #### Operation
 
-After you have applied the pallet so that the containers are running, you can access the streamlit
-demo app from your web browser at <http://localhostps/streamlit-demo>.
-
-The segmenter loads input datasets - and saves output files - in folders within
-`~/.local/share/planktoscope/data`, instead of the usual path on PlanktoScopes (`/home/pi/data`).
-Similarly, logs are saved in `~/.local/share/planktoscope/device-backend-logs` instead of
-`/home/pi/device-backend-logs`. The simplest way to add input datasets and download EcoTaxa export
-archives (working around issues with file permissions between your user account and the `root` user
-used for running the segmenter) will be to use the filebrowser app in your web browser, at
-<http://localhost:9000>.
+After you have applied the pallet so that the streamlit demo app's container is running, you can
+access the streamlit demo app from your web browser at <http://localhost/ps/streamlit-demo>.
 
 Before you can use the streamlit demo app, you will need to download a classification model file
 (e.g. <https://github.com/PlanktoScope/streamlit-classification-app/releases/download/models%2Fdemo-1/effv2s_no_norm_DA+sh_20patience_256x256_50ep_loss.pth>)
