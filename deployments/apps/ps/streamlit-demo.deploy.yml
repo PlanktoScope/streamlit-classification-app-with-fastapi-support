@@ -1,0 +1,4 @@
+package: /pkg
+features:
+  - frontend
+disabled: false

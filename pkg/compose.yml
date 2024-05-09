@@ -1,6 +1,8 @@
 services:
   server:
     image: ghcr.io/planktoscope/streamlit-classification-app:sha-a83b7ea
+    volumes:
+      - ~/.local/share/planktoscope/models/:/app/models
 
 networks:
   default:
