@@ -1,0 +1,6 @@
+forklift-version: v0.7.2-alpha.1
+
+pallet:
+  path: github.com/PlanktoScope/streamlit-classification-app
+  description: Example deployment of the streamlit Forklift package for a minimal demo of the streamlit app
+  readme-file: README.md

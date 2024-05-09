@@ -1,0 +1,4 @@
+package: github.com/PlanktoScope/device-pkgs/core/infra/caddy-ingress
+features:
+  - service-proxy
+disabled: false
