@@ -16,7 +16,7 @@ WORKDIR /app
 
 # Copy the app files from the server into the container
 COPY *.py ./
-COPY models ./models
+COPY models ./
 
 # Install the required dependencies
 RUN \
