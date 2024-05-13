@@ -131,6 +131,10 @@ into `~/.local/share/planktoscope/models`; by default the model weights file mus
 instead by disabling the `torchvision-model-efficientnet-v2-s` feature flag of the pallet's
 `apps/ps/streamlit-demo` package deployment.
 
+Then you can upload input images
+(e.g. <https://github.com/PlanktoScope/streamlit-classification-app/releases/download/models%2Fdemo-1/example-input-tots-ps-acq-20-02_49_37_288982.jpg>)
+to the demo app.
+
 ## License
 This project is licensed under the [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0).
 
