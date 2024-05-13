@@ -33,6 +33,9 @@ To avoid errors later in running the docker container, please import your pretra
 
     models/<model_name>
 
+By default, models must match Torchvision's `efficientnet_v2_m` architecture; to use models with a
+different architecture, you must specify the architecture with a `TORCHVISION_MODEL_TYPE`
+environment variable passed into the app.
 
 #### Building the Docker Image
 
@@ -121,9 +124,12 @@ forklift stage apply
 After you have applied the pallet so that the streamlit demo app's container is running, you can
 access the streamlit demo app from your web browser at <http://localhost/ps/streamlit-demo>.
 
-Before you can use the streamlit demo app, you will need to download a classification model file
+Before you can use the demo app, you will need to download a classification model weights file
 (e.g. <https://github.com/PlanktoScope/streamlit-classification-app/releases/download/models%2Fdemo-1/effv2s_no_norm_DA+sh_20patience_256x256_50ep_loss.pth>)
-into `~/.local/share/planktoscope/models`.
+into `~/.local/share/planktoscope/models`; by default the model weights file must be for the
+`efficientnet_v2_s` model architecture, but you can use the `efficientnet_v2_m` model architecture
+instead by disabling the `torchvision-model-efficientnet-v2-s` feature flag of the pallet's
+`apps/ps/streamlit-demo` package deployment.
 
 ## License
 This project is licensed under the [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0).

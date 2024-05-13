@@ -1,4 +1,5 @@
 package: /pkg
 features:
   - frontend
+  - torchvision-model-efficientnet-v2-s
 disabled: false

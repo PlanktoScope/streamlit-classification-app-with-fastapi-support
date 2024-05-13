@@ -15,7 +15,12 @@ from itertools import cycle
 import torch
 import torch.nn as nn
 import torchvision.transforms as transforms
-from torchvision.models import efficientnet_v2_m
+from torchvision.models import efficientnet_v2_m, efficientnet_v2_s
+
+model_types = {
+    "efficientnet_v2_m": efficientnet_v2_m,
+    "efficientnet_v2_s": efficientnet_v2_s,
+}
 
 ############################################################################################
 # Functions/variables to be used in the Streamlit app
@@ -42,11 +47,11 @@ def set_theme(theme):
         st.markdown(light, unsafe_allow_html=True)
 
 # Define the model loading function
-def load_model(model_path):
+def load_model(model_type, model_path):
     # Load the model checkpoint (remove map_location if you have a GPU)
     loaded_cpt = torch.load(model_path, map_location=torch.device('cpu')) 
     # Define the EfficientNet_V2_M model (by default, no pre-trained weights are used)
-    model = efficientnet_v2_m() 
+    model = model_types[model_type]()
     # Modify the classifier to match the number of classes in the dataset
     model.classifier[-1] = nn.Linear(model.classifier[-1].in_features, 5)
     # Load the state_dict in order to load the trained parameters 
@@ -143,7 +148,10 @@ def main():
     image_size = int(re.search(pattern, selected_model).group().split("x")[0])
 
     # Load the selected model in pytorch
-    model = load_model(os.path.join("models", selected_model))
+    model = load_model(
+        os.getenv("TORCHVISION_MODEL_TYPE", "efficientnet_v2_m"),
+        os.path.join("models", selected_model),
+    )
 
     # Load the class labels
     class_labels = ["Acantharia", "Calanoida", "Neoceratium_petersii", "Ptychodiscus_noctiluca", "Undella"]
