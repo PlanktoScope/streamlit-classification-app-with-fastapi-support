@@ -1,4 +1,4 @@
-# Streamlit web application for microorganism image classification
+# Streamlit web application for microorganism image classification (with FastAPI support)
 
 ## Introduction
 
@@ -24,8 +24,8 @@ Before running this application, make sure you have Docker installed on your sys
 
 To clone the repository and navigate into the project directory, run:
 
-    git clone https://github.com/PlanktoScope/streamlit-classification-app.git
-    cd streamlit-classification-app
+    git clone https://github.com/PlanktoScope/streamlit-classification-app-with-fastapi-support.git
+    cd streamlit-classification-app-with-fastapi-support
     
 #### Creating a folder for pretrained models
 
@@ -61,6 +61,22 @@ From there, you can use the web interface to:
 
 - Upload images for classification.
 - View model predictions and the distribution of detected objects.
+
+## FastAPI server for the classification of mussel and oyster larval stages
+
+This version of the Streamlit web app contains the code for a FastAPI server hosting the model selected for the classification of mussel and oyster larvae. This model was trained on hatchery larvae images.
+
+Starting the FastAPI Server:
+
+1. Navigate to the fastapi folder within the fastapi model serving version:
+```
+cd fastapi_model_serving/fastapi
+```
+
+2. Run the FastAPI server:
+```
+uvicorn server:api_server --host 0.0.0.0 --port 8000
+```   
 
 ### Deployment/Testing with Forklift
 
