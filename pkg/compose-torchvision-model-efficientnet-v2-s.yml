@@ -1,4 +1,0 @@
-services:
-  server:
-    environment:
-      TORCHVISION_MODEL_TYPE: efficientnet_v2_s

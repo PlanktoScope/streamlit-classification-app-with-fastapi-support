@@ -31,8 +31,3 @@ features:
           paths:
             - /ps/streamlit-demo
             - /ps/streamlit-demo/*
-  torchvision-model-efficientnet-v2-s:
-    description:
-      Loads model weights for the efficientnet_v2_s model architecture instead of the default
-      model architecture (efficientnet_v2_m).
-    compose-files: [compose-torchvision-model-efficientnet-v2-s.yml]
